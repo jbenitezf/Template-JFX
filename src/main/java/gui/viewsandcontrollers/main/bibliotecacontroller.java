@@ -18,16 +18,16 @@ public class bibliotecacontroller {
 	public void initialize() {
     
 	}
-//	private TextField titulo;
-//	
-//	private TextField ISBN;
-//	
-//	private TextField Autor;
-//	
-//	private TextField Género;
-//	
-//	private TextField Páginas;
-//    @FXML
+	private TextField titulo;
+	
+	private TextField ISBN;
+	
+	private TextField Autor;
+	
+	private TextField Género;
+	
+	private TextField Páginas;
+    @FXML
    public void nuevo(ActionEvent event) throws IOException {
 
         

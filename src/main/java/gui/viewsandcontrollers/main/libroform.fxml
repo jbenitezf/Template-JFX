@@ -46,7 +46,7 @@
                   <Label text="Autor" GridPane.rowIndex="2" />
                   <Label text="Género" GridPane.rowIndex="3" />
                   <Label alignment="CENTER" text="Páginas" GridPane.rowIndex="4" />
-                  <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="choiceBox" onAction="#mostrar" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="20.0" />
