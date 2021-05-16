@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.viewsandcontrollers.main.Librocontroller">
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="547.0" prefWidth="600.0">
          <children>
@@ -46,20 +45,20 @@
                   <Label text="Autor" GridPane.rowIndex="2" />
                   <Label text="Género" GridPane.rowIndex="3" />
                   <Label alignment="CENTER" text="Páginas" GridPane.rowIndex="4" />
-                  <ChoiceBox fx:id="choiceBox" onAction="#mostrar" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ChoiceBox fx:id="genero" accessibleRole="CHECK_BOX" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin></TextField>
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="autor" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin></TextField>
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="paginas" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin></TextField>
-                  <TextField id="Titulo" GridPane.columnIndex="1">
+                  <TextField fx:id="titulo" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
@@ -68,10 +67,10 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#guardar" prefHeight="34.0" prefWidth="72.0" text="Guardar" />
+                  <Button fx:id="guardar" mnemonicParsing="false" onAction="#guardar" prefHeight="34.0" prefWidth="72.0" text="Guardar" />
                </children>
             </HBox>
          </children>
       </VBox>
    </children>
-</FlowPane>
+</AnchorPane>

@@ -1,6 +1,8 @@
 package negocio.model;
 
-public class Libro {
+import java.util.Comparator;
+
+public class Libro implements Comparable<Libro>, Comparator<Libro>{
 	
 	private String titulo;
 	private String isbn;
@@ -8,13 +10,8 @@ public class Libro {
 	private String autor;
 	private Integer paginas;
 	
-	public Libro() {
-	
-		
-	}
 	
 	public Libro(String titulo, String isbn, Genero genero, String autor, Integer paginas) {
-		super();
 		this.titulo = titulo;
 		this.isbn = isbn;
 		this.genero = genero;
@@ -22,7 +19,9 @@ public class Libro {
 		this.paginas = paginas;
 		
 	}
-
+	public Libro() {
+		
+	}
 	public String getTitulo() {
 		return titulo;
 	}
@@ -88,4 +87,12 @@ public class Libro {
 				+ paginas ;
 	}
 	
+	@Override
+	public int compareTo(Libro o) {
+		return this.titulo.compareTo(o.titulo);
+	}
+
+	public int compare(Libro o1, Libro o2) {
+		return o1.getPaginas() - o2.getPaginas();
+	}
 }

@@ -61,7 +61,7 @@
 //        launch();
 //    }
 //}
-package gui.viewsandcontrollers.main;
+package gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -76,7 +76,7 @@ public class Main extends Application {
 	@Override
     public void start(Stage stage) throws Exception {
 		
-		Parent root = FXMLLoader.load(getClass().getResource("biblioteca.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("viewsandcontrollers/main/MainStage.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

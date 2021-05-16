@@ -11,36 +11,36 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.viewsandcontrollers.main.bibliotecacontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.viewsandcontrollers.main.MainStageController">
    <children>
-      <TableView layoutY="42.0" prefHeight="306.0" prefWidth="600.0">
+      <TableView fx:id="tableView" layoutY="42.0" prefHeight="306.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="169.0" text="Título " />
-          <TableColumn prefWidth="100.0" text="ISBN" />
-            <TableColumn minWidth="8.0" prefWidth="107.0" text="Autor " />
-            <TableColumn prefWidth="104.0" text="Género" />
-            <TableColumn prefWidth="119.0" text="Páginas" />
+          <TableColumn fx:id="Título" prefWidth="169.0" text="Título " />
+          <TableColumn fx:id="ISBN" prefWidth="100.0" text="ISBN" />
+            <TableColumn fx:id="Autor" minWidth="8.0" prefWidth="107.0" text="Autor " />
+            <TableColumn fx:id="Género" prefWidth="104.0" text="Género" />
+            <TableColumn fx:id="Páginas" prefWidth="119.0" text="Páginas" />
         </columns>
       </TableView>
       <HBox alignment="CENTER" layoutY="346.0" prefHeight="55.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Nuevo" onAction="#nuevo">
+            <Button fx:id="nuevo" mnemonicParsing="false" text="Nuevo" onAction="#buttonNuevo">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Editar">
+            <Button fx:id="editar" mnemonicParsing="false" text="Editar" onAction="#Editar">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Eliminar">
+            <Button  fx:id="borrar" mnemonicParsing="false" text="Eliminar" onAction="#Borrar">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Salvar FXML">
+            <Button fx:id="guardar" mnemonicParsing="false" text="Salvar FXML" onAction="#Guardar">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button mnemonicParsing="false" text="Cargar XML">
+            <Button fx:id="cargar" mnemonicParsing="false" text="Cargar XML" onAction="#Cargar">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
