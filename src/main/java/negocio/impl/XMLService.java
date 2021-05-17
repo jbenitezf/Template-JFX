@@ -59,24 +59,16 @@ public class XMLService {
 	public static void cargarXML(String nombre_archivo) {
 
 		try {
-			// Creo una instancia de DocumentBuilderFactory
+			
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			// Creo un documentBuilder
 			DocumentBuilder builder = factory.newDocumentBuilder();
-
-			// Obtengo el documento, a partir del XML
 			Document documento = builder.parse(new File(nombre_archivo + ".xml"));
-
-			// Cojo todas las etiquetas coche del documento
 			NodeList cargaXML = documento.getElementsByTagName("libro");
 
-			// Recorro las etiquetas
+		
 			for (int i = 0; i < cargaXML.getLength(); i++) {
-				// Cojo el nodo actual
 				Node nodo = cargaXML.item(i);
-				// Compruebo si el nodo es un elemento
 				if (nodo.getNodeType() == Node.ELEMENT_NODE) {
-					// Lo transformo a Element
 					Element element = (Element) nodo;
 
 					String titulo = element.getElementsByTagName("titulo").item(0).getTextContent();
@@ -110,46 +102,34 @@ public class XMLService {
 			Document document = implementation.createDocument(null, name, null);
 			document.setXmlVersion("1.0");
 
-			// Main Node
 			Element raiz = document.getDocumentElement();
-			// Por cada key creamos un item que contendrá la key y el value
 			for (int i = 0; i < titulo.size(); i++) {
-				// Item Node
 				Element itemLibro = document.createElement("libro");
-				// Key Node
 				Element tituloNode = document.createElement("titulo");
 				Text nodeTituloValue = document.createTextNode(titulo.get(i));
 				tituloNode.appendChild(nodeTituloValue);
-				// Key Node
 				Element isbnNode = document.createElement("isbn");
 				Text nodeIsbnValue = document.createTextNode(isbn.get(i));
 				isbnNode.appendChild(nodeIsbnValue);
-				// Key Node
 				Element generoNode = document.createElement("genero");
 				Text nodeGeneroValue = document.createTextNode(genero.get(i));
 				generoNode.appendChild(nodeGeneroValue);
-				// Key Node
 				Element autorNode = document.createElement("autor");
 				Text nodeAutorValue = document.createTextNode(autor.get(i));
 				autorNode.appendChild(nodeAutorValue);
-				// Key Node
 				Element paginasNode = document.createElement("paginas");
 				Text nodePaginasValue = document.createTextNode(paginas.get(i));
 				paginasNode.appendChild(nodePaginasValue);
 
-				// append keyNode and valueNode to itemNode
 				itemLibro.appendChild(tituloNode);
 				itemLibro.appendChild(isbnNode);
 				itemLibro.appendChild(generoNode);
 				itemLibro.appendChild(autorNode);
 				itemLibro.appendChild(paginasNode);
-				// append itemNode to raiz
-				raiz.appendChild(itemLibro); // pegamos el elemento a la raiz "Documento"
+				raiz.appendChild(itemLibro);
 			}
-			// Generate XML
 			Source source = new DOMSource(document);
-			// Indicamos donde lo queremos almacenar
-			Result result = new StreamResult(new java.io.File(name + ".xml")); // nombre del archivo
+			Result result = new StreamResult(new java.io.File(name + ".xml"));
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(source, result);
 		}

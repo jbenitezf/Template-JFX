@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import negocio.BibliotecaService;
-import negocio.model.Genero;
 import negocio.model.Libro;
 
 public class BibliotecaImpl implements BibliotecaService {
@@ -15,13 +14,6 @@ public class BibliotecaImpl implements BibliotecaService {
 	private BibliotecaImpl() {
 		catalogo = new ArrayList<Libro>();
 
-		Libro libro1 = new Libro("IT", "9781231231234", Genero.NOVELA, "Stephen King", 1300);
-		Libro libro2 = new Libro("La isla del tesoro", "9781869345867", Genero.FICCION, "Pedro", 200);
-		Libro libro3 = new Libro("Platero y yo", "9781276849034", Genero.POESIA, "Juan Ramon Jimenez", 150);
-
-		catalogo.add(libro1);
-		catalogo.add(libro2);
-		catalogo.add(libro3);
 	}
 
 	public static BibliotecaImpl getInstance() {
